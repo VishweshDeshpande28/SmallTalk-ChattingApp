@@ -1,10 +1,19 @@
 import Modal from 'react-bootstrap/Modal';
 import React from 'react'
 import { Container } from 'react-bootstrap';
+import Chats from './Chats';
 
 
 function Settings(props) {
+  const [modalShow, setModalShow] = React.useState(false)
+
   return (
+    <>
+      <Chats
+    show={modalShow}
+    onHide={() => setModalShow(false)}
+    />
+
     <Container>
     <Modal
       {...props}
@@ -36,7 +45,7 @@ function Settings(props) {
       <div
         className="menu-item"
         variant="light"
-        style={{ marginRight: "50px", marginTop: "10px", margin:'20px', cursor: 'pointer' }}
+        style={{ marginRight: "50px", marginTop: "10px", margin:'20px', cursor: 'pointer' }} onClick={() => setModalShow(true)}
       >
         Chats
       </div>
@@ -67,6 +76,7 @@ function Settings(props) {
       </Modal.Body>
     </Modal>
     </Container>
+    </>
   )
 }
 

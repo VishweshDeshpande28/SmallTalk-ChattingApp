@@ -4,11 +4,17 @@ import "./Navbar.css";
 import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 import Settings from "./Settings";
+import About from "./About";
 
 function Navbar1(props) {
   const [modalShow, setModalShow] = React.useState(false)
+  const [modalShow1, setModalShow1] = React.useState(false)
   return (
     <>
+        <About
+    show={modalShow1}
+    onHide={() => setModalShow1(false)}
+    />
         <Settings
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -22,7 +28,7 @@ function Navbar1(props) {
             marginTop: "10px",
             margin: "20px",
             cursor: "pointer",
-          }} onClick={() => setModalShow(true)}
+          }} onClick={() => setModalShow1(true)}
         >
           About
         </div>
