@@ -5,14 +5,17 @@ import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Player } from "@lottiefiles/react-lottie-player";
+import "../Home/Home";
 
-function WaitingToConnect() {
+function WaitingToConnect(props) {
   return (
     <>
+
       <Container>
         <Row className="align-items-center">
           <Col className="col-12 col-md-6">
             <div className="text-center w-100">
+            <p> Hello, {} </p>
               <h3>Send this URL to a friend to start chatting.</h3>
               <span className="link-url">
                 <a>{window.location.href}</a>

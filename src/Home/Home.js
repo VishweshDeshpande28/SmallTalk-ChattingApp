@@ -17,10 +17,16 @@ const { Title } = Typography;
 
 function Home(props) {
   const [value, setValue] = React.useState(dayjs("1998-03-28T21:11:54"));
-
   const handleChange = (newValue) => {
     setValue(newValue);
   };
+
+  const [val, setVal] = React.useState("");
+
+  const change = event => {
+    setVal(event.target.value);
+  }
+  
   return (
     <>
       <Title level={1}>SmallTalk</Title>
@@ -30,7 +36,7 @@ function Home(props) {
             <Container>
               <form>
                 <div className="form-outline mb-4" >
-                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth />
+                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={change} value={val}/>
                 </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Stack spacing={3}>

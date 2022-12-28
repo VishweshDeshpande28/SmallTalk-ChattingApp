@@ -1,14 +1,20 @@
 import React from "react";
 import { Input } from "@material-ui/core";
 import Button from "react-bootstrap/Button";
-import styled from "styled-components";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
+
 export function ChatInput({ onChangeText, sendMessage, currentText }) {
   const { transcript, listening, browserSupportsSpeechRecognition } =
-    useSpeechRecognition();
+  useSpeechRecognition();
+  
+  const [newTranscript, setNewTranscript] = React.useState("");
+  
+  const changeTranscript = event => {
+    setNewTranscript(event.target.value)
+  }
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -16,7 +22,7 @@ export function ChatInput({ onChangeText, sendMessage, currentText }) {
   return (
     <div className="sendMsg">
       <Input
-        required
+
         style={{
           width: "78%",
           fontSize: "20px",
@@ -27,16 +33,18 @@ export function ChatInput({ onChangeText, sendMessage, currentText }) {
         placeholder="Message..."
         type="text"
         value={currentText || transcript}
-        onChange={onChangeText}
+        onChange={onChangeText || changeTranscript}
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
       />
       <Button
         variant="outline-success"
-        style={{ width: "150px", marginLeft: "25px", marginBottom: "-6px" }}
+        style={{ width: "150px", marginLeft: "25px", marginBottom: "-6px" }} 
+        onClick={() => sendMessage()}
         type="submit"
       >
-        Send
-      </Button>{" "}
+        
+      </Button>
+
       <img
         src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"
         className="record"
@@ -49,16 +57,3 @@ export function ChatInput({ onChangeText, sendMessage, currentText }) {
     </div>
   );
 }
-const InputStyled = styled(Input)`
-  width: 90%;
-  &:focus {
-    box-shadow: none;
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
-`;
