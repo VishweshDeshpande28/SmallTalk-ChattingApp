@@ -21,6 +21,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
+    "react-speech-kit": "^3.0.1",
     "react-speech-recognition": "^3.10.0",
     "styled-components": "^5.3.6",
     "uuid": "^8.3.2",

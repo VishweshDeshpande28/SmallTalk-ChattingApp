@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export const initializePeerMethods = (peer, setValue, onReceiveData, self) => {
+export const initializePeerMethods = (peer, setValue, onReceiveData, self, other) => {
 
   peer.on("open", (id) => {
     console.log("My peer ID is: ", id);

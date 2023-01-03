@@ -21,22 +21,23 @@ function Home(props) {
     setValue(newValue);
   };
 
-  const [val, setVal] = React.useState("");
+  const [name , setName] = React.useState("");
 
-  const change = event => {
-    setVal(event.target.value);
+
+  const handleSubmit=(e)=> {
+    e.preventDefault();
+    console.log(name);
   }
   
   return (
     <>
-      <Title level={1}>SmallTalk</Title>
       <Container>
+      <Title level={3}>SmallTalk</Title>
         <Row className="d-flex">
           <Col className="text-center" style={{ marginTop: "50px" }}>
-            <Container>
               <form>
                 <div className="form-outline mb-4" >
-                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={change} value={val}/>
+                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={(e) => setName(e.target.value)} value={name}/>
                 </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Stack spacing={3}>
@@ -49,25 +50,24 @@ function Home(props) {
                     />
                   </Stack>
                 </LocalizationProvider>
-                <br />
                 <button
                   type="submit"
                   className="btn btn-primary btn-block mb-4"
-                  onClick={() => props.history.push("/chat")}
+                  style={{marginTop: "30px"}}
+                  onClick={() => props.history.push("/chat") || {handleSubmit}}
                 >
                   Create a Room
                 </button>
               </form>
-            </Container>
           </Col>
-          <Col className="text-center" style={{ marginTop: "170px" }}>
+          <Col>
             <Player
               autoplay
               loop
               src="https://assets6.lottiefiles.com/packages/lf20_c3gt0z38.json"
-              style={{ height: "400px", width: "400px" }}
+              style={{ height: "400px", width: "400px", maxWidth:"100%", width: "100%"}}
             ></Player>
-          </Col>
+            </Col>
         </Row>
       </Container>
     </>
