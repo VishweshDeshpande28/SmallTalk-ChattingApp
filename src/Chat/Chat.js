@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Peer from "peerjs";
 import { Typography } from "antd";
 import { Container } from "react-bootstrap";
@@ -8,7 +8,6 @@ import { Spinner } from "../Components/Spin";
 import WaitingToConnect from "../Components/WaitingToConnect";
 import Navbar1 from "../Navbar/Navbar";
 import "../App.css";
-
 import {
   initializePeerMethods,
   sendMessage,

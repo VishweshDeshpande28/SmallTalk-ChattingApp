@@ -13,6 +13,7 @@ export function RenderChat({ chat }) {
             <Row>
               <Col style={{ padding: "10px" }} key={v.id}>
                 <Text self={v.self}>{v.text}</Text>
+                {/* <img style={{}} src={{File}} alt={""}/> */}
               </Col>
             </Row>
           );
@@ -21,15 +22,6 @@ export function RenderChat({ chat }) {
     </>
   );
 }
-
-// const Row = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 5px;
-//   width: 100%;
-//   max-width:400px;
-//   justify-content: ${(props) => (props.self ? "initial" : "end")};
-// `;
 
 const Text = styled.div`
   margin-left: 10px;

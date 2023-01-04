@@ -49,7 +49,7 @@ export function ChatInput({
         Send
       </Button>
 
-<Uploadfile/>
+<Uploadfile />
 
       <img
         src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"

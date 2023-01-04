@@ -12,7 +12,7 @@ function WaitingToConnect() {
     <>
       <Container>
         <Row className="align-items-center">
-          <Col>
+          <Col style={{marginTop:"100px"}}>
             <h3> Hello! {}</h3>
               <h3>Send this URL to a friend to start chatting.</h3>
               <span className="link-url">
@@ -24,7 +24,7 @@ function WaitingToConnect() {
                 autoplay
                 loop
                 src="https://assets1.lottiefiles.com/packages/lf20_zwwwgco2.json"
-                style={{ height: "400px", width: "400px" }}
+                style={{ height: "350px", width: "350px", marginTop: "100px"}}
               ></Player>
               </Col>
         </Row>

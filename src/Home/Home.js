@@ -37,7 +37,7 @@ function Home(props) {
           <Col className="text-center" style={{ marginTop: "50px" }}>
               <form>
                 <div className="form-outline mb-4" >
-                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={(e) => setName(e.target.value)} value={name}/>
+                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={(e) => setName(e.target.value)} value={name} required/>
                 </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Stack spacing={3}>
@@ -45,6 +45,7 @@ function Home(props) {
                       label="Birthdate"
                       inputFormat="MM/DD/YYYY"
                       value={value}
+                      required
                       onChange={handleChange}
                       renderInput={(params) => <TextField {...params} />}
                     />
@@ -54,6 +55,7 @@ function Home(props) {
                   type="submit"
                   className="btn btn-primary btn-block mb-4"
                   style={{marginTop: "30px"}}
+                  
                   onClick={() => props.history.push("/chat") || {handleSubmit}}
                 >
                   Create a Room
@@ -65,7 +67,7 @@ function Home(props) {
               autoplay
               loop
               src="https://assets6.lottiefiles.com/packages/lf20_c3gt0z38.json"
-              style={{ height: "400px", width: "400px", maxWidth:"100%", width: "100%"}}
+              style={{ height: "350px", width: "350px", maxWidth:"100%", marginTop:"100px"}}
             ></Player>
             </Col>
         </Row>
