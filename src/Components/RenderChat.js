@@ -13,7 +13,7 @@ export function RenderChat({ chat }) {
             <Row>
               <Col style={{ padding: "10px" }} key={v.id}>
                 <Text self={v.self}>{v.text}</Text>
-                {/* <img style={{}} src={{File}} alt={""}/> */}
+              
               </Col>
             </Row>
           );
@@ -37,4 +37,5 @@ const Text = styled.div`
   max-width: 100%;
   width: 40%;
   overflow-wrap: break-word;
+  cursor: pointer;
 `;

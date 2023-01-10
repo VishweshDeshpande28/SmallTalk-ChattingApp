@@ -7,12 +7,11 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 export function ChatInput({
-  transcript,
   onChangeText,
   sendMessage,
   currentText,
 }) {
-  const { listening, browserSupportsSpeechRecognition } =
+  const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
 
   if (!browserSupportsSpeechRecognition) {
@@ -49,7 +48,7 @@ export function ChatInput({
         Send
       </Button>
 
-<Uploadfile />
+      <Uploadfile />
 
       <img
         src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"

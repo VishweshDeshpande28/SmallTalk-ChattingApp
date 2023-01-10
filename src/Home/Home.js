@@ -21,23 +21,19 @@ function Home(props) {
     setValue(newValue);
   };
 
-  const [name , setName] = React.useState("");
+  const [name , setName] = React.useState('');
+  console.log(name)
 
-
-  const handleSubmit=(e)=> {
-    e.preventDefault();
-    console.log(name);
-  }
   
   return (
     <>
       <Container>
-      <Title level={3}>SmallTalk</Title>
+      <Title style={{borderBottom:"3px solid black"}} level={3}>SmallTalk</Title>
         <Row className="d-flex">
           <Col className="text-center" style={{ marginTop: "50px" }}>
               <form>
                 <div className="form-outline mb-4" >
-                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={(e) => setName(e.target.value)} value={name} required/>
+                <TextField id="outlined-basic" label="Name" variant="outlined" fullWidth onChange={(e) => setName(e.target.value)} value={name}/>
                 </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Stack spacing={3}>
@@ -56,7 +52,7 @@ function Home(props) {
                   className="btn btn-primary btn-block mb-4"
                   style={{marginTop: "30px"}}
                   
-                  onClick={() => props.history.push("/chat") || {handleSubmit}}
+                  onClick={() => props.history.push("/chat")}
                 >
                   Create a Room
                 </button>
