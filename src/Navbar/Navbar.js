@@ -1,5 +1,5 @@
 import React from "react";
-import { slide as Menu } from "react-burger-menu";
+import { push as Menu } from "react-burger-menu";
 import "./Navbar.css";
 import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";

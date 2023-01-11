@@ -7,35 +7,44 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import styled from "styled-components";
 
-
 function Home(props) {
-  
   return (
     <>
       <Container>
-      <Title style={{borderBottom:"3px solid black"}} level={3}>SmallTalk</Title>
+        <Title level={3}>SmallTalk</Title>
         <Row className="d-flex">
           <Col className="text-center" style={{ marginTop: "50px" }}>
-              <form>
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block mb-4"
-                  style={{marginTop: "30px"}}
-                  
-                  onClick={() => props.history.push("/chat")}
-                >
-                  Create a Room
-                </button>
-              </form>
+            <form>
+              <FormGroup>
+                <Label htmlFor="label">Name</Label>
+                <Input id="label" placeholder="Enter your name" />
+
+                <Label htmlFor="input">Birthday</Label>
+                <Input id="input" placeholder="Enter your birthdate"/>
+              </FormGroup>
+              <button
+                type="submit"
+                className="btn btn-primary btn-block mb-4"
+                style={{ marginTop: "30px" }}
+                onClick={() => props.history.push("/chat")}
+              >
+                Create a Room
+              </button>
+            </form>
           </Col>
           <Col>
             <Player
               autoplay
               loop
               src="https://assets6.lottiefiles.com/packages/lf20_c3gt0z38.json"
-              style={{ height: "350px", width: "350px", maxWidth:"100%", marginTop:"100px"}}
+              style={{
+                height: "350px",
+                width: "350px",
+                maxWidth: "100%",
+                marginTop: "100px",
+              }}
             ></Player>
-            </Col>
+          </Col>
         </Row>
       </Container>
     </>
@@ -49,4 +58,27 @@ const Title = styled.div`
   align-items: center;
   display: flex;
   font-size: x-large;
+  font-weight: bold;
+`;
+
+export const FormGroup = styled.div`
+    display: block;
+	width: 300px;
+  width: 100%;
+`;
+
+export const Label = styled.label`
+    display: flex;
+    margin-top: 20px;
+`;
+
+
+export const Input = styled.input`
+	padding: 0.5em;
+	color: black;
+	background: white;
+	border: 1px solid black;
+  max-width: 200%;
+  width: 100%;
+	margin-bottom: 0.5em;
 `;
