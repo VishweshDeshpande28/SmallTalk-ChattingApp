@@ -13,16 +13,18 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
+
 const { Title } = Typography;
 
 function Home(props) {
+
   const [value, setValue] = React.useState(dayjs("1998-03-28T21:11:54"));
   const handleChange = (newValue) => {
     setValue(newValue);
   };
 
   const [name , setName] = React.useState('');
-  console.log(name)
+  console.log(name);
 
   
   return (

@@ -14,6 +14,7 @@ export function ChatInput({
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
 
+
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }

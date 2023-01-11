@@ -13,7 +13,7 @@ function WaitingToConnect() {
       <Container>
         <Row className="align-items-center">
           <Col style={{marginTop:"100px"}}>
-            <h3> Hello! </h3>
+            <h3> Hello!</h3>
               <h3>Send this URL to a friend to start chatting.</h3>
               <span className="link-url">
                 <a>{window.location.href}</a>
