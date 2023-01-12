@@ -22,7 +22,7 @@ function Navbar1(props) {
       <Menu>
       <div
           className="menu-item"
-          variant="light"
+          variant="black"
           style={{
             marginRight: "50px",
             marginTop: "10px",
@@ -41,7 +41,7 @@ function Navbar1(props) {
         ></div>
         <div
           className="menu-item"
-          variant="light"
+          variant="black"
           style={{
             marginRight: "50px",
             marginTop: "10px",

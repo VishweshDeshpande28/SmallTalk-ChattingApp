@@ -5,18 +5,20 @@ import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Player } from "@lottiefiles/react-lottie-player";
+import styled from "styled-components";
 
 function WaitingToConnect() {
 
   return (
     <>
       <Container>
+      <Title level={3}>SmallTalk</Title>
         <Row className="align-items-center">
           <Col style={{marginTop:"100px"}}>
-            <h3> Hello!</h3>
-              <h3>Send this URL to a friend to start chatting.</h3>
+          <Title level={3}>Hello !</Title>
+          <Title level={3}>Send this URL to a friend to start chatting.</Title>
               <span className="link-url">
-                <a>{window.location.href}</a>
+                <Anchor>{window.location.href}</Anchor>
               </span>
           </Col>
           <Col>
@@ -34,3 +36,23 @@ function WaitingToConnect() {
 }
 
 export default withRouter(WaitingToConnect);
+
+
+const Title = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: x-large;
+  font-weight: bold;
+`;
+
+const Anchor = styled.div`
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  border: 2px solid;
+  border-radius: 40px;
+`;

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Peer from "peerjs";
-import { Typography } from "antd";
-import { Container } from "react-bootstrap";
 import { RenderChat } from "../Components/RenderChat";
 import { ChatInput } from "../Components/ChatInput";
 import { Spinner } from "../Components/Spin";
@@ -12,8 +10,6 @@ import {
   initializePeerMethods,
   sendMessage,
 } from "../service/connectionServiceUtil";
-
-const { Title } = Typography;
 
 export class Chat extends Component {
   constructor(props) {
@@ -73,13 +69,10 @@ export class Chat extends Component {
     }
     return (
       <>
-        <Navbar1 />
-        <Title level={3}>SmallTalk</Title>
+        <Navbar1/>
         {connected ? (
           <>
-            <Container>
               <RenderChat chat={chat} />
-            </Container>
             <ChatInput
               onChangeText={this.onChangeText}
               sendMessage={() =>
