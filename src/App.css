@@ -46,17 +46,7 @@ span a {
   text-align: center;
 }
 
-.text-center {
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-}
 
-.d-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 p {
   font-size: 20px;
@@ -65,14 +55,8 @@ p {
 }
 
 .record {
-  position: relative;
-  display: flex;
   box-shadow: 0 0 10px rgb(164, 164, 164);
-  float: right;
-  margin-left: 25px;
-  margin-top: 8px;
   opacity: 0.5;
-  filter: alpha(opacity=40);
   cursor: pointer;
 }
 .record:hover {
@@ -106,38 +90,6 @@ p {
   flex-direction: column;
 }
 
-/* @media (max-width: 775px) {
-    p {
-      font-size: 20px;
-    }
-    .sent {
-      padding: 10px 10px 0 10px;
-    }
-    .received {
-      padding: 10px 10px 0 10px;
-    }
-    img {
-      height: 35px;
-      margin-top: -10px;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    p {
-      font-size: 15px;
-    }
-    .sent {
-      padding: 7px 7px 0 7px;
-    }
-    .received {
-      padding: 7px 7px 0 7px;
-    }
-    img {
-      height: 30px;
-      margin-top: -7px;
-    }
-  } */
-
 @media (max-width: 775px) {
   p {
     font-size: 20px;
@@ -168,4 +120,22 @@ p {
     height: 30px;
     margin-top: -7px;
   }
+}
+
+
+#chat2 .form-control {
+  border-color: transparent;
+}
+
+#chat2 .form-control:focus {
+  border-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }

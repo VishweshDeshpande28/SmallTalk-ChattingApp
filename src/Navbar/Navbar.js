@@ -1,80 +1,86 @@
 import React from "react";
-import { push as Menu } from "react-burger-menu";
-import "./Navbar.css";
-import Button from "react-bootstrap/Button";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 import { withRouter } from "react-router-dom";
-import Settings from "./Settings";
 import About from "./About";
 
-function Navbar1(props) {
-  const [modalShow, setModalShow] = React.useState(false)
-  const [modalShow1, setModalShow1] = React.useState(false)
+function MenuAppBar(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [modalShow1, setModalShow1] = React.useState(false);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <>
-        <About
-    show={modalShow1}
-    onHide={() => setModalShow1(false)}
-    />
-        <Settings
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-      <Menu>
-      <div
-          className="menu-item"
-          variant="black"
-          style={{
-            marginRight: "50px",
-            marginTop: "10px",
-            margin: "20px",
-            cursor: "pointer",
-          }} onClick={() => setModalShow1(true)}
-        >
-          About
-        </div>
-        <div
-          style={{
-            borderTop: "1px solid #fff ",
-            marginLeft: 20,
-            marginRight: 20,
-          }} 
-        ></div>
-        <div
-          className="menu-item"
-          variant="black"
-          style={{
-            marginRight: "50px",
-            marginTop: "10px",
-            margin: "20px",
-            cursor: "pointer",
-          }} onClick={() => setModalShow(true)}
-        >
-          Settings
-        </div>
-        <div
-          style={{
-            borderTop: "1px solid #fff ",
-            marginLeft: 20,
-            marginRight: 20,
-          }} 
-        ></div>
-        <a className="menu-item">
-          <Button
-            variant="outline-danger"
-            style={{
-              marginRight: "50px",
-              marginTop: "10px",
-              margin: "20px",
-              cursor: "pointer",
-            }}
-            onClick={() => props.history.push("/")}
-          >
-            Logout
-          </Button>
-        </a>
-      </Menu>
-    </>
+    <Box>
+      <About show={modalShow1} onHide={() => setModalShow1(false)} />
+
+      <AppBar position="relative">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          ></IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            SmallTalk
+          </Typography>
+          {(
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={() => setModalShow1(true)}>
+                  About this App
+                </MenuItem>
+                <MenuItem>Switch to Dark Mode</MenuItem>
+                <MenuItem onClick={() => props.history.push("/")}>
+                  Logout
+                </MenuItem>
+              </Menu>
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 
-export default withRouter(Navbar1);
+export default withRouter(MenuAppBar);

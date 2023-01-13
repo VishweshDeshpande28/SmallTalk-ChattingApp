@@ -6,10 +6,12 @@ import React, {useState} from 'react'
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./Components/globalStyles";
 import { lightTheme, darkTheme } from "./Components/Theme";
+import { Button  } from "@material-ui/core";
+import MenuAppBar from "./Navbar/Navbar"
 
 function App() {
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('light');  
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
 }
@@ -18,8 +20,10 @@ function App() {
     <>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
-      <button onClick={themeToggler}>Switch Theme</button>
+      <Button onClick={themeToggler}>Switch to Dark Mode</Button>
     <Router>
+    <MenuAppBar/>
+  
       <Switch>
         <Route path="/chat" component={Chat} />
         <Route path="/" component={Home} />

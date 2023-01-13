@@ -12,7 +12,6 @@ function WaitingToConnect() {
   return (
     <>
       <Container>
-      <Title level={3}>SmallTalk</Title>
         <Row className="align-items-center">
           <Col style={{marginTop:"100px"}}>
           <Title level={3}>Hello !</Title>
@@ -41,6 +40,7 @@ export default withRouter(WaitingToConnect);
 const Title = styled.div`
   justify-content: center;
   align-items: center;
+  text-align: center;
   display: flex;
   font-size: x-large;
   font-weight: bold;

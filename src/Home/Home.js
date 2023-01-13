@@ -11,7 +11,6 @@ function Home(props) {
   return (
     <>
       <Container>
-        <Title level={3}>SmallTalk</Title>
         <Row className="d-flex">
           <Col className="text-center" style={{ marginTop: "50px" }}>
             <form>
@@ -52,14 +51,6 @@ function Home(props) {
 }
 
 export default withRouter(Home);
-
-const Title = styled.div`
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: x-large;
-  font-weight: bold;
-`;
 
 export const FormGroup = styled.div`
     display: block;

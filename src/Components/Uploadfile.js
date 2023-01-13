@@ -1,5 +1,6 @@
 import React from 'react';
 import { Upload } from 'antd';
+import styled from "styled-components";
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
@@ -16,11 +17,23 @@ const props = {
 };
 const Uploadfile = () => (
   <Upload {...props}>
-          <img
+          <Img
         src="https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118929_1280.png"
         className="record"
         alt="1"
-      ></img>
+      ></Img>
   </Upload>
 );
 export default Uploadfile;
+
+const Img = styled.img`
+  position: fixed;
+  right: 170px;
+  bottom: 20px;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    right: 75px;
+    bottom: 30px;
+  }
+`;

@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.Title};
     color: ${({ theme }) => theme.Label};
     color: ${({ theme }) => theme.Anchor};
+    color: ${({ theme }) => theme.Div};
     transition: all 0.50s linear;
   }`
 

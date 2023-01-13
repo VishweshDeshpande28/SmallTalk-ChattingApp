@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Peer from "peerjs";
-import { RenderChat } from "../Components/RenderChat";
-import { ChatInput } from "../Components/ChatInput";
+import { RenderChat }  from "../Components/RenderChat";
+import ChatInput from "../Components/ChatInput";
 import { Spinner } from "../Components/Spin";
 import WaitingToConnect from "../Components/WaitingToConnect";
-import Navbar1 from "../Navbar/Navbar";
 import "../App.css";
 import {
   initializePeerMethods,
@@ -69,7 +68,6 @@ export class Chat extends Component {
     }
     return (
       <>
-        <Navbar1/>
         {connected ? (
           <>
               <RenderChat chat={chat} />

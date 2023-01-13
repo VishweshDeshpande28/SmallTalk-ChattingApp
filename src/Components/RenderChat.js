@@ -1,24 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { Col, Row } from "react-bootstrap";
-import { Container } from "@material-ui/core";
 import "../App.css";
+import { Container } from "@material-ui/core";
 
 export function RenderChat({ chat }) {
   return (
     <>
-    <Title level={3}>SmallTalk</Title>
+    <Container>
+    <Container1>
         {chat.map((v) => {
           return (
-            <Container>
             <Row>
               <Col style={{ padding: "10px" }} key={v.id}>
-                <Text self={v.self}>{v.text}</Text>
+                <Text self={v.self && v.id}>{v.text}</Text>
               </Col>
             </Row>
-            </Container>
           );
         })}
+        </Container1>
+        </Container>
     </>
   );
 }
@@ -40,10 +41,8 @@ const Text = styled.div`
   cursor: pointer;
 `;
 
-const Title = styled.div`
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: x-large;
-  font-weight: bold;
+const Container1 = styled.div`
+    padding-bottom: 80px;
+    padding-top: 30px;
 `;
+
