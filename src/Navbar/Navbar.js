@@ -67,11 +67,11 @@ function MenuAppBar(props) {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={() => setModalShow1(true)}>
+                <MenuItem onClick={() => setModalShow1(true) && {handleClose}}>
                   About this App
                 </MenuItem>
                 <MenuItem>Switch to Dark Mode</MenuItem>
-                <MenuItem onClick={() => props.history.push("/")}>
+                <MenuItem onClick={() => props.history.push("/") && {handleClose}}>
                   Logout
                 </MenuItem>
               </Menu>

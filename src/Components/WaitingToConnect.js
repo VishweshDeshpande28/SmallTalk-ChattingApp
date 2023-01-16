@@ -17,7 +17,9 @@ function WaitingToConnect() {
           <Title level={3}>Hello !</Title>
           <Title level={3}>Send this URL to a friend to start chatting.</Title>
               <span className="link-url">
-                <Anchor>{window.location.href}</Anchor>
+                <Anchor onClick={() => { 
+              navigator.clipboard.writeText(window.location.href) && alert("Your link has been copied to clipboard!")}}>{window.location.href}</Anchor>
+              
               </span>
           </Col>
           <Col>
