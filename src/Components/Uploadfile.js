@@ -33,7 +33,7 @@ const Img = styled.img`
   z-index: 1;
 
   @media (max-width: 768px) {
-    right: 75px;
+    right: 90px;
     bottom: 30px;
   }
 `;

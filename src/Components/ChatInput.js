@@ -6,11 +6,12 @@ import {
 import Uploadfile from "./Uploadfile";
 import "../App.css";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-export default function ChatInput({ onChangeText, sendMessage, currentText }) {
+function ChatInput({ onChangeText, sendMessage, currentText }) {
 
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
@@ -48,42 +49,64 @@ export default function ChatInput({ onChangeText, sendMessage, currentText }) {
         >
         </input>
           <Uploadfile />
+          <Img1
+        src="https://e1.pngegg.com/pngimages/929/197/png-clipart-button-ui-system-icons-facetime-video-call-icon.png"
+        className="record"
+      ></Img1>
           <Img
         src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"
         className="record"
-        alt="1"
         onClick={
           SpeechRecognition.startListening || SpeechRecognition.stopListening
         }
       ></Img>
       <Para>{listening ? "on" : "off"}</Para>
+
       </MDBCardFooter>
     </MDBCard>
   );
 }
 
+export default withRouter(ChatInput);
+
 const Img = styled.img`
   position: fixed;
   border: 2px solid black;
-  right: 110px;
+  right: 55px;
   bottom: 20px;
   z-index: 1;
 
   @media (max-width: 768px) {
-    right: 40px;
+    right: 25px;
+    bottom: 30px;
+  }
+`;
+
+const Img1 = styled.img`
+  position: fixed;
+  border: 2px solid black;
+  right: 112px;
+  bottom: 20px;
+  box-shadow: 0 0 10px rgb(164, 164, 164);
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 1;
+  filter: alpha(opacity=100);
+
+  @media (max-width: 768px) {
+    right: 58px;
     bottom: 30px;
   }
 `;
 
 const Para = styled.p`
   position: fixed;
-  right: 70px;
+  right: 20px;
     bottom: 10px;
   z-index: 1;
 
   @media (max-width: 768px) {
-    right: 15px;
+    right: 5px;
     bottom: 20px;
   }
 `;
-
