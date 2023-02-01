@@ -6,6 +6,7 @@ import {
 import Uploadfile from "./Uploadfile";
 import "../App.css";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -15,6 +16,12 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
 
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
+
+    const history = useHistory();
+
+    const VideoCall = () => {
+      history.push("/CharApp")
+  }
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -52,6 +59,7 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
           <Img1
         src="https://e1.pngegg.com/pngimages/929/197/png-clipart-button-ui-system-icons-facetime-video-call-icon.png"
         className="record"
+        onClick={VideoCall}
       ></Img1>
           <Img
         src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"

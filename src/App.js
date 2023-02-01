@@ -4,10 +4,11 @@ import Home from "./Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, {useState} from 'react'
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./Components/globalStyles";
-import { lightTheme, darkTheme } from "./Components/Theme";
+import { GlobalStyles } from "./components/globalStyles";
+import { lightTheme, darkTheme } from "./components/Theme";
 import { Button  } from "@material-ui/core";
-import MenuAppBar from "./Navbar/Navbar"
+import MenuAppBar from "./Navbar/Navbar";
+import CharApp from "./CharApp";
 
 function App() {
 
@@ -25,8 +26,9 @@ function App() {
     <MenuAppBar/>
   
       <Switch>
-        <Route path="/chat" component={Chat} />
-        <Route path="/" component={Home} />
+        <Route exact path="/chat" component={Chat} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/CharApp" component={CharApp} />
       </Switch>
     </Router>
     </ThemeProvider>

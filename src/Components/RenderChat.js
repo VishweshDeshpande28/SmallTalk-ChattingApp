@@ -32,7 +32,7 @@ const Text = styled.div`
   padding: 10px;
   font-weight: bold;
   color: ${(props) => (props.self ? "white" : "black")};
-  background-color: ${(props) => (props.self ? "blue" : "white")};
+  background-color: ${(props) => (props.self ? "#1976d2" : "white")};
   float: ${(props) => (props.self ? "right" : "left")};
   text-align: ${(props) => (props.self ? "right" : "left")};
   max-width: 100%;
