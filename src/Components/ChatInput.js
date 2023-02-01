@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MDBCard,
-  MDBCardFooter,
-} from "mdb-react-ui-kit";
+import { MDBCard, MDBCardFooter } from "mdb-react-ui-kit";
 import Uploadfile from "./Uploadfile";
 import "../App.css";
 import styled from "styled-components";
@@ -13,15 +10,14 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 function ChatInput({ onChangeText, sendMessage, currentText }) {
-
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
 
-    const history = useHistory();
+  const history = useHistory();
 
-    const VideoCall = () => {
-      history.push("/CharApp")
-  }
+  const VideoCall = () => {
+    history.push("/CharApp");
+  };
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -49,27 +45,25 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
           id="exampleFormControlInput1"
           placeholder="Type message"
           value={currentText || transcript}
-        onChange={onChangeText}
-        onKeyDown={(e) =>
-          e.key === "Enter" && sendMessage() && e.preventDefault()
-        }
-        >
-        </input>
-          <Uploadfile />
-          <Img1
-        src="https://e1.pngegg.com/pngimages/929/197/png-clipart-button-ui-system-icons-facetime-video-call-icon.png"
-        className="record"
-        onClick={VideoCall}
-      ></Img1>
-          <Img
-        src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"
-        className="record"
-        onClick={
-          SpeechRecognition.startListening || SpeechRecognition.stopListening
-        }
-      ></Img>
-      <Para>{listening ? "on" : "off"}</Para>
-
+          onChange={onChangeText}
+          onKeyDown={(e) =>
+            e.key === "Enter" && sendMessage() && e.preventDefault()
+          }
+        ></input>
+        <Uploadfile />
+        <Img1
+          src="https://e1.pngegg.com/pngimages/929/197/png-clipart-button-ui-system-icons-facetime-video-call-icon.png"
+          className="record"
+          onClick={VideoCall}
+        ></Img1>
+        <Img
+          src="https://static.vecteezy.com/system/resources/previews/002/798/703/non_2x/microphone-icon-flat-design-illustration-free-vector.jpg"
+          className="record"
+          onClick={
+            SpeechRecognition.startListening || SpeechRecognition.stopListening
+          }
+        ></Img>
+        <Para>{listening ? "on" : "off"}</Para>
       </MDBCardFooter>
     </MDBCard>
   );
@@ -110,7 +104,7 @@ const Img1 = styled.img`
 const Para = styled.p`
   position: fixed;
   right: 20px;
-    bottom: 10px;
+  bottom: 10px;
   z-index: 1;
 
   @media (max-width: 768px) {

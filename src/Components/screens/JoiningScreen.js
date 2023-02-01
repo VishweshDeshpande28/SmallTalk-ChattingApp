@@ -332,7 +332,6 @@ export function JoiningScreen({
           flex: 1,
           flexDirection: "column",
           height: "100vh",
-          backgroundColor: theme.palette.main,
         }}
       >
         <Box

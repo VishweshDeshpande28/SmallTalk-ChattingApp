@@ -19,19 +19,19 @@ function App() {
 
   return (
     <>
+    <Router>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
       <Button onClick={themeToggler}>Switch to Dark Mode</Button>
-    <Router>
     <MenuAppBar/>
   
       <Switch>
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/CharApp" component={CharApp} />
       </Switch>
-    </Router>
     </ThemeProvider>
+    <Route exact path="/CharApp" component={CharApp} />
+    </Router>
     </>
   );
 }

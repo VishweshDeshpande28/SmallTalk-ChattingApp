@@ -22,9 +22,7 @@ export function MeetingDetailsScreen({
   const [isJoinMeetingClicked, setIsJoinMeetingClicked] = useState(false);
 
   return (
-    <div
-      className={`flex flex-1 flex-col w-full `}
-    >
+    <div className={`flex flex-1 flex-col w-full `}>
       {iscreateMeetingClicked ? (
         <div className="border border-solid border-gray-400 rounded-xl px-4 py-3  flex items-center justify-center">
           <p className="text-white text-base">
@@ -116,8 +114,7 @@ export function MeetingDetailsScreen({
         <div className="w-full md:mt-0 mt-4 flex flex-col">
           <div className="flex items-center justify-center flex-col w-full mt-2">
             {meetingType === meetingTypes.ILS ? (
-              <>
-              </>
+              <></>
             ) : (
               <>
                 <button
