@@ -98,8 +98,8 @@ export function MeetingDetailsScreen({
           >
             {meetingType === meetingTypes.MEETING
               ? iscreateMeetingClicked
-                ? "Start a meeting"
-                : "Join a meeting"
+                ? "Start Facetime"
+                : "Join Facetime"
               : iscreateMeetingClicked
               ? "Start a meeting"
               : isJoinMeetingClicked &&
@@ -118,7 +118,7 @@ export function MeetingDetailsScreen({
             ) : (
               <>
                 <button
-                  className="w-full bg-purple-350 text-white px-2 py-3 rounded-xl"
+                  className="w-full bg-purple-350 text-black px-2 py-3 rounded-xl"
                   onClick={async (e) => {
                     const meetingId = await _handleOnCreateMeeting();
                     setMeetingId(meetingId);
@@ -128,10 +128,10 @@ export function MeetingDetailsScreen({
                     }
                   }}
                 >
-                  Create a meeting
+                  Create Facetime
                 </button>
                 <button
-                  className="w-full bg-gray-650 text-white px-2 py-3 rounded-xl mt-5"
+                  className="w-full bg-gray-650 text-black px-2 py-3 rounded-xl mt-5"
                   onClick={(e) => {
                     setIsJoinMeetingClicked(true);
                     if (meetingType === meetingTypes.ILS) {
@@ -139,7 +139,7 @@ export function MeetingDetailsScreen({
                     }
                   }}
                 >
-                  Join a meeting
+                  Join Facetime
                 </button>
               </>
             )}
