@@ -7,7 +7,7 @@ import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/Theme";
 import { Button  } from "@material-ui/core";
-import MenuAppBar from "./Navbar/Navbar";
+import DrawerAppBar from "./Navbar/Navbar";
 import CharApp from "./CharApp";
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
     <Router>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
-      <Button onClick={themeToggler}>Switch to Dark Mode</Button>
-    <MenuAppBar/>
+      {/* <Button onClick={themeToggler}>Switch to Dark Mode</Button> */}
+    <DrawerAppBar/>
   
       <Switch>
         <Route exact path="/chat" component={Chat} />

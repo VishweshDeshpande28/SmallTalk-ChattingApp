@@ -57,4 +57,5 @@ const Anchor = styled.div`
   display: flex;
   border: 2px solid;
   border-radius: 40px;
+  cursor: pointer;
 `;

@@ -24,7 +24,7 @@ export function MeetingDetailsScreen({
   return (
     <div className={`flex flex-1 flex-col w-full `}>
       {iscreateMeetingClicked ? (
-        <div className="border border-solid border-gray-400 rounded-xl px-4 py-3  flex items-center justify-center">
+        <div className="border border-solid border-gray-400 rounded-xl px-4 py-3 flex items-center justify-center">
           <p className="text-white text-base">
             {meetingType === meetingTypes.MEETING
               ? `Meeting code : ${meetingId}`
@@ -57,13 +57,13 @@ export function MeetingDetailsScreen({
             placeholder={
               meetingType === meetingTypes.MEETING
                 ? "Enter meeting Id"
-                : "Enter studio code"
+                : ""
             }
             className="px-4 py-3 bg-gray-650 rounded-xl text-white w-full text-center"
           />
           {meetingIdError && (
             <p className="text-xs text-red-600">{`Please enter valid ${
-              meetingType === meetingTypes.MEETING ? "meetingId" : "studioCode"
+              meetingType === meetingTypes.MEETING ? "meetingId" : ""
             }`}</p>
           )}
         </>
