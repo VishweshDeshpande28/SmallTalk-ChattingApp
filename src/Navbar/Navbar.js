@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,25 +11,21 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import About from "./About";
 import { withRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 
 const drawerWidth = 240;
 
 function DrawerAppBar(props) {
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const [theme, setTheme] = useState('light');  
-  const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
-}
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const [modalShow1, setModalShow1] = React.useState(false);
-
   
 
   const drawer = (
@@ -39,10 +34,25 @@ function DrawerAppBar(props) {
         SmallTalk
       </Typography>
       <Divider />
+      <List >
+          <ListItem disablePadding style={{flexDirection:'column'}}>
+            <ListItemButton sx={{ textAlign: 'center', color: "#000" }}>
+              Profile
+            </ListItemButton>
+            <ListItemButton onClick={() => setModalShow1(true) } sx={{ textAlign: 'center', color: "#000" }}>
+              About the App
+            </ListItemButton>
+            <ListItemButton onClick={props.themeToggler} sx={{ textAlign: 'center', color: "#000" }}>
+              Dark Mode
+            </ListItemButton>
+            <ListItemButton onClick={() => props.history.push("/")} sx={{ textAlign: 'center', color: "#000" }}>
+              Logout
+            </ListItemButton>
+          </ListItem>
+      </List>
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
 
@@ -69,18 +79,17 @@ function DrawerAppBar(props) {
             SmallTalk
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-          
               <>
-              <Button  sx={{ color: '#fff' }}>
+              <Button  sx={{ color: '#000' }}>
                 Profile
               </Button>
-              <Button onClick={() => setModalShow1(true)} sx={{ color: '#fff' }}>
+              <Button onClick={() => setModalShow1(true)} sx={{ color: '#000' }}>
                 About
               </Button>
-              <Button onClick={() => themeToggler(ThemeProvider)} sx={{ color: '#fff' }}>
+              <Button onClick={props.themeToggler} sx={{ color: '#000' }}>
                 Dark Mode
               </Button>
-              <Button onClick={() => props.history.push("/")} sx={{ color: '#fff' }}>
+              <Button onClick={() => props.history.push("/")} sx={{ color: '#000' }}>
                 Logout
               </Button>
               </>
@@ -89,7 +98,6 @@ function DrawerAppBar(props) {
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -103,9 +111,6 @@ function DrawerAppBar(props) {
         >
           {drawer}
         </Drawer>
-      </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
       </Box>
     </Box>
   );

@@ -13,13 +13,12 @@ function WaitingToConnect() {
     <>
       <Container>
         <Row className="align-items-center">
-          <Col style={{marginTop:"100px"}}>
+          <Col className="col1" style={{marginTop:"10%"}}>
           <Title level={3}>Hello !</Title>
           <Title level={3}>Send this URL to a friend to start chatting.</Title>
               <span className="link-url">
                 <Anchor onClick={() => { 
               navigator.clipboard.writeText(window.location.href) && alert("Your link has been copied to clipboard!")}}>{window.location.href}</Anchor>
-              
               </span>
           </Col>
           <Col>
@@ -27,7 +26,7 @@ function WaitingToConnect() {
                 autoplay
                 loop
                 src="https://assets1.lottiefiles.com/packages/lf20_zwwwgco2.json"
-                style={{ height: "350px", width: "350px", marginTop: "100px"}}
+                style={{ height: "350px", width: "350px", marginTop: "30%"}}
               ></Player>
               </Col>
         </Row>

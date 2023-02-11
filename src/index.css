@@ -11,6 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -51,4 +53,8 @@ box-shadow: 0px 0px 0px 2px black inset;
 
 input[type="radio"]:checked + label{
  color: #fff; 
+}
+
+.mr-20 {
+  margin-right: 20px !important;
 }
