@@ -39,10 +39,11 @@ const Text = styled.div`
   width: 40%;
   overflow-wrap: break-word;
   cursor: pointer;
+  text-align: left;
 `;
 
 const Container1 = styled.div`
     padding-bottom: 80px;
-    padding-top: 30px;
+    padding-top: 80px;
 `;
 

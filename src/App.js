@@ -21,15 +21,15 @@ function App() {
     <Router>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
-    <DrawerAppBar/>
       <DrawerAppBar themeToggler={themeToggler}/>
+    <DrawerAppBar/>
   
       <Switch>
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/" component={Home} />
+    <Route exact path="/CharApp" component={CharApp} />
       </Switch>
     </ThemeProvider>
-    <Route exact path="/CharApp" component={CharApp} />
     </Router>
   );
 }

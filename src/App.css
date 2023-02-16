@@ -80,6 +80,7 @@ p {
   padding: 10px;
   padding-bottom: 30px;
   background-color: #fafafa;
+  padding-top: 80px;
 }
 
 .msgs {
@@ -102,9 +103,6 @@ p {
     height: 35px;
     margin-top: -10px;
   }
-  .col1{
-    margin-top: 35%;
-  }
 }
 
 @media (max-width: 500px) {
@@ -120,9 +118,6 @@ p {
   img {
     height: 30px;
     margin-top: -7px;
-  }
-  .col1{
-    margin-top: 35%;
   }
 }
 
