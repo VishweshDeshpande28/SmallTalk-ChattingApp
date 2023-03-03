@@ -21,8 +21,8 @@ function App() {
     <Router>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
-      <DrawerAppBar themeToggler={themeToggler}/>
     <DrawerAppBar/>
+      <DrawerAppBar themeToggler={themeToggler}/>
   
       <Switch>
         <Route exact path="/chat" component={Chat} />
