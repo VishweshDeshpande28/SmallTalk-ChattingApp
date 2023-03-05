@@ -3,9 +3,9 @@ import {
   createCameraVideoTrack,
   useMeeting,
 } from "@videosdk.live/react-sdk";
-import { BottomBar } from "./components/BottomBar";
-import MemorizedParticipantView from "./components/ParticipantView";
-import WaitingToJoinScreen from "../components/screens/WaitingToJoinScreen";
+import { BottomBar } from "./Components/BottomBar";
+import MemorizedParticipantView from "./Components/ParticipantView";
+import WaitingToJoinScreen from "../Components/screens/WaitingToJoinScreen";
 
 export function MeetingContainer({
   onMeetingLeave,

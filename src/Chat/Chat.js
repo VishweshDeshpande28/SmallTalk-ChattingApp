@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Peer from "peerjs";
-import { RenderChat }  from "../components/RenderChat";
-import ChatInput from "../components/ChatInput";
-import { Spinner } from "../components/Spin";
-import WaitingToConnect from "../components/WaitingToConnect";
+import { RenderChat }  from "../Components/RenderChat";
+import ChatInput from "../Components/ChatInput";
+import { Spinner } from "../Components/Spin";
+import WaitingToConnect from "../Components/WaitingToConnect";
 import "../App.css";
 import {
   initializePeerMethods,

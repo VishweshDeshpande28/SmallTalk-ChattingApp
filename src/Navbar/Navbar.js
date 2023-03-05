@@ -30,15 +30,12 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h5" sx={{ my: 2 }}>
+      <Typography variant="h5" style={{cursor:'pointer'}} sx={{ my: 2 }}>
         SmallTalk
       </Typography>
       <Divider />
       <List >
           <ListItem disablePadding style={{flexDirection:'column'}}>
-            <ListItemButton sx={{ textAlign: 'center', color: "#000" }}>
-              Profile
-            </ListItemButton>
             <ListItemButton onClick={() => setModalShow1(true) } sx={{ textAlign: 'center', color: "#000" }}>
               About the App
             </ListItemButton>
@@ -74,15 +71,13 @@ function DrawerAppBar(props) {
           <Typography
             variant="h5"
             component="div"
+            style={{cursor:'pointer'}}
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             SmallTalk
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               <>
-              <Button  sx={{ color: '#000' }}>
-                Profile
-              </Button>
               <Button onClick={() => setModalShow1(true)} sx={{ color: '#000' }}>
                 About
               </Button>

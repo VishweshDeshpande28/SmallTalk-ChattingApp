@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Constants, MeetingProvider } from "@videosdk.live/react-sdk";
-import { JoiningScreen } from "./components/screens/JoiningScreen";
+import { JoiningScreen } from "./Components/screens/JoiningScreen";
 import { meetingTypes } from "./utils/common";
 import { MeetingContainer } from "./meeting/MeetingContainer";
 

@@ -4,8 +4,8 @@ import Home from "./Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, {useState} from 'react';
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./components/globalStyles";
-import { lightTheme, darkTheme } from "./components/Theme";
+import { GlobalStyles } from "./Components/globalStyles";
+import { lightTheme, darkTheme } from "./Components/Theme";
 import DrawerAppBar from "./Navbar/Navbar";
 import CharApp from "./CharApp";
 

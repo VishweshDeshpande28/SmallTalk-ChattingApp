@@ -8,7 +8,7 @@ import MicOffIcon from "../../icons/Bottombar/MicOffIcon";
 import WebcamOnIcon from "../../icons/Bottombar/WebcamOnIcon";
 import WebcamOffIcon from "../../icons/Bottombar/WebcamOffIcon";
 import EndIcon from "../../icons/Bottombar/EndIcon";
-import { OutlinedButton } from "../../components/buttons/OutlinedButton";
+import { OutlinedButton } from "../../Components/buttons/OutlinedButton";
 import {
   makeStyles,
 } from "@material-ui/core";
