@@ -1,18 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import { MDBCard, MDBCardFooter } from "mdb-react-ui-kit";
 import Uploadfile from "./Uploadfile";
 import "../App.css";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { useSpeechSynthesis } from "react-speech-kit";
+import { withRouter } from "react-router-dom";
 
 function ChatInput({ onChangeText, sendMessage, currentText }) {
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
+
+    const [text, setText] = useState('');
+
+    const handleInputChange = (e) => {
+      setText(e.target.value);
+    };
+
+    const handleSpeak = () => {
+      const message = new SpeechSynthesisUtterance(currentText);
+      window.speechSynthesis.speak(message);
+    };
 
   const history = useHistory();
 
@@ -48,11 +59,12 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
           placeholder="Type message"
           style={{textOverflow:"ellipsis", width:'100%', maxWidth:'1300px'}}
           value={currentText || transcript}
-          onChange={onChangeText}
+          onChange={onChangeText || handleInputChange}
           onKeyDown={(e) =>
             e.key === "Enter" && sendMessage() && e.preventDefault()
           }
         ></input>
+        <button onClick={handleSpeak}>Speak</button>
         <Uploadfile />
         <Img1
           src="https://e1.pngegg.com/pngimages/929/197/png-clipart-button-ui-system-icons-facetime-video-call-icon.png"
