@@ -1,35 +1,37 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Col, Row } from "react-bootstrap";
 import "../App.css";
 import { Container } from "@material-ui/core";
 
-
-
-
 export function RenderChat({ chat }) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   return (
     <>
-    <Container>
-    <Container1>
-        {chat.map((messages) => {
-          const handleSpeak = () => {
-    const message = new SpeechSynthesisUtterance(messages.text);
-    window.speechSynthesis.speak(message);
-  };
+      <Container>
+        <Container1>
+          {chat.map((messages) => {
+            const handleSpeak = () => {
+              const message = new SpeechSynthesisUtterance(messages.text);
+              window.speechSynthesis.speak(message);
+            };
 
-          return (
-            <Row>
-              <Col style={{ padding: "10px" }} key={messages.id}>
-                <Text onClick={handleSpeak} self={messages.self && messages.id}>{messages.text}</Text>
-              </Col>
-            </Row>
-          );
-        })}
+            return (
+              <Row>
+                <Col style={{ padding: "10px" }} key={messages.id}>
+                  <Text
+                    onClick={handleSpeak}
+                    self={messages.self && messages.id}
+                  >
+                    {messages.text}
+                  </Text>
+                </Col>
+              </Row>
+            );
+          })}
         </Container1>
-        </Container>
+      </Container>
     </>
   );
 }
@@ -51,14 +53,12 @@ const Text = styled.div`
   cursor: pointer;
   text-align: left;
 
-
-  @media(max-width:768px){
-    width:100%;
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
 const Container1 = styled.div`
-    padding-bottom: 80px;
-    padding-top: 80px;
+  padding-bottom: 80px;
+  padding-top: 80px;
 `;
-
