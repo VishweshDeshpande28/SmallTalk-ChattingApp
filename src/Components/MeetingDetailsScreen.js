@@ -2,6 +2,7 @@ import { CheckIcon, ClipboardIcon } from "@heroicons/react/outline";
 import { Constants } from "@videosdk.live/react-sdk";
 import React, { useState } from "react";
 import { meetingTypes } from "../utils/common";
+import styled from "styled-components";
 
 export function MeetingDetailsScreen({
   onClickJoin,
@@ -127,6 +128,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.CONFERENCE);
                     }
                   }}
+                  style={{border: '1px solid black'}}
                 >
                   Create Facetime
                 </button>
@@ -138,6 +140,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.VIEWER);
                     }
                   }}
+                  style={{border: '1px solid black'}}
                 >
                   Join Facetime
                 </button>
