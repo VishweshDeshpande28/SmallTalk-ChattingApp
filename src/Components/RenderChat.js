@@ -4,16 +4,20 @@ import { Col, Row } from "react-bootstrap";
 import "../App.css";
 import { Container } from "@material-ui/core";
 
+
+
+
 export function RenderChat({ chat }) {
+
   return (
     <>
     <Container>
     <Container1>
-        {chat.map((v) => {
+        {chat.map((messages) => {
           return (
             <Row>
-              <Col style={{ padding: "10px" }} key={v.id}>
-                <Text self={v.self && v.id}>{v.text}</Text>
+              <Col style={{ padding: "10px" }} key={messages.id}>
+                <Text self={messages.self && messages.id}>{messages.text}</Text>
               </Col>
             </Row>
           );
@@ -36,10 +40,15 @@ const Text = styled.div`
   float: ${(props) => (props.self ? "right" : "left")};
   text-align: ${(props) => (props.self ? "right" : "left")};
   max-width: 100%;
-  width: 40%;
+  width: 50%;
   overflow-wrap: break-word;
   cursor: pointer;
   text-align: left;
+
+
+  @media(max-width:768px){
+    width:100%;
+  }
 `;
 
 const Container1 = styled.div`

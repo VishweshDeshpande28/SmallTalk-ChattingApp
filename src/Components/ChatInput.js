@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 function ChatInput({ onChangeText, sendMessage, currentText }) {
   const { transcript, listening, browserSupportsSpeechRecognition } =
@@ -22,6 +23,7 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
+
   return (
     <MDBCard
       id="chat2"
@@ -44,6 +46,7 @@ function ChatInput({ onChangeText, sendMessage, currentText }) {
           className="form-control form-control-lg"
           id="exampleFormControlInput1"
           placeholder="Type message"
+          style={{textOverflow:"ellipsis", width:'100%', maxWidth:'1300px'}}
           value={currentText || transcript}
           onChange={onChangeText}
           onKeyDown={(e) =>

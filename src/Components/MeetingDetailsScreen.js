@@ -33,6 +33,7 @@ export function MeetingDetailsScreen({
           </p>
           <button
             className="ml-2"
+            style={{border: '1px solid black'}}
             onClick={() => {
               navigator.clipboard.writeText(meetingId);
               setIsCopied(true);
@@ -74,6 +75,7 @@ export function MeetingDetailsScreen({
         <>
           <input
             value={participantName}
+            style={{border: '1px solid black'}}
             onChange={(e) => setParticipantName(e.target.value)}
             placeholder="Enter your name"
             className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-white w-full text-center"
