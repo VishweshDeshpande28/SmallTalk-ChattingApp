@@ -120,12 +120,12 @@ export function MeetingContainer({
   return (
     <div
       ref={containerRef}
-      className="h-screen flex flex-col bg-gray-800"
+      className="h-screen flex flex-col bg-black"
     >
       {typeof localParticipantAllowedJoin === "boolean" ? (
         localParticipantAllowedJoin ? (
           <>
-            <div className={` flex flex-1 flex-row bg-gray-800 `}>
+            <div className={` flex flex-1 flex-row bg-black`}>
               <div className={`flex flex-1 `}>
                 {isPresenting && isMobile ? null : (
                   <MemorizedParticipantView

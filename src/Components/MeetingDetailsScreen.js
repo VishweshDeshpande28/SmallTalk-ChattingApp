@@ -78,7 +78,7 @@ export function MeetingDetailsScreen({
             style={{border: '1px solid black'}}
             onChange={(e) => setParticipantName(e.target.value)}
             placeholder="Enter your name"
-            className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-white w-full text-center"
+            className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-black w-full text-center"
           />
           <button
             disabled={participantName.length < 3}
