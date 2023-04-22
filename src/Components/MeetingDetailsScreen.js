@@ -25,15 +25,14 @@ export function MeetingDetailsScreen({
   return (
     <div className={`flex flex-1 flex-col w-full `}>
       {iscreateMeetingClicked ? (
-        <div className="border border-solid border-gray-400 rounded-xl px-4 py-3 flex items-center justify-center">
-          <p className="text-white text-base">
+        <div className=" rounded-xl bg-gray-650 px-4 py-3 flex items-center justify-center" style={{border:"2px solid black"}}>
+          <p className="text-black text-base">
             {meetingType === meetingTypes.MEETING
               ? `Meeting code : ${meetingId}`
               : `Studio code : ${meetingId}`}
           </p>
           <button
             className="ml-2"
-            style={{border: '1px solid black'}}
             onClick={() => {
               navigator.clipboard.writeText(meetingId);
               setIsCopied(true);
@@ -45,7 +44,7 @@ export function MeetingDetailsScreen({
             {isCopied ? (
               <CheckIcon className="h-5 w-5 text-green-400" />
             ) : (
-              <ClipboardIcon className="h-5 w-5 text-white" />
+              <ClipboardIcon className="h-5 w-5 text-black" />
             )}
           </button>
         </div>
@@ -57,9 +56,7 @@ export function MeetingDetailsScreen({
               setMeetingId(e.target.value);
             }}
             placeholder={
-              meetingType === meetingTypes.MEETING
-                ? "Enter meeting Id"
-                : ""
+              meetingType === meetingTypes.MEETING ? "Enter meeting Id" : ""
             }
             className="px-4 py-3 bg-gray-650 rounded-xl text-white w-full text-center"
           />
@@ -75,7 +72,7 @@ export function MeetingDetailsScreen({
         <>
           <input
             value={participantName}
-            style={{border: '1px solid black'}}
+            style={{ border:"2px solid black"}}
             onChange={(e) => setParticipantName(e.target.value)}
             placeholder="Enter your name"
             className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-black w-full text-center"
@@ -130,7 +127,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.CONFERENCE);
                     }
                   }}
-                  style={{border: '1px solid black'}}
+                  style={{ border: "1px solid black" }}
                 >
                   Create Facetime
                 </button>
@@ -142,7 +139,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.VIEWER);
                     }
                   }}
-                  style={{border: '1px solid black'}}
+                  style={{ border: "1px solid black" }}
                 >
                   Join Facetime
                 </button>
