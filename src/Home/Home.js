@@ -37,6 +37,7 @@ function Home(props) {
             <button className="formFieldButton" onClick={() => props.history.push("/chat")}>Start Chatting</button>
           </div>
         </div>
+        
       </Router>
     );
   }
