@@ -78,7 +78,6 @@ export function MeetingDetailsScreen({
             className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-black w-full text-center"
           />
           <button
-            disabled={participantName.length < 3}
             className={`w-full ${
               participantName.length < 3 ? "bg-gray-650" : "bg-purple-350"
             }  text-white px-2 py-3 rounded-xl mt-5`}

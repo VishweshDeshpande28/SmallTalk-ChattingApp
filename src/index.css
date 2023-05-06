@@ -58,3 +58,7 @@ input[type="radio"]:checked + label{
 .mr-20 {
   margin-right: 20px !important;
 }
+/* button css to make it visible for now temp changes */
+button.w-full.bg-purple-350.text-white.px-2.py-3.rounded-xl.mt-5 {
+  background-color: black;
+}   
