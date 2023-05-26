@@ -8,7 +8,6 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 function Home(props) {
     return (
-      <Router basename="/react-auth-ui/">
         <div className="App">
           <div className="appAside" />
             <Player
@@ -34,10 +33,9 @@ function Home(props) {
               </NavLink>
             </div>
             <Route exact path="/" component={SignUpForm} />
-            <button className="formFieldButton" onClick={() => props.history.push("/chat")}>Start Chatting</button>
+            {/* <button className="formFieldButton" onClick={() => props.history.push("/chat")}>Start Chatting</button> */}
           </div>
         </div>
-      </Router>
     );
   }
 
