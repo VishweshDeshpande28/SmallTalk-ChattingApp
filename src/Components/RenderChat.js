@@ -5,7 +5,7 @@ import "../App.css";
 import { Container } from "@material-ui/core";
 
 export function RenderChat({ chat }) {
-  const [text, setText] = useState("");
+  // const [text, setText] = useState("");
 
   return (
     <>

@@ -2,7 +2,6 @@ import { CheckIcon, ClipboardIcon } from "@heroicons/react/outline";
 import { Constants } from "@videosdk.live/react-sdk";
 import React, { useState } from "react";
 import { meetingTypes } from "../utils/common";
-import styled from "styled-components";
 
 export function MeetingDetailsScreen({
   onClickJoin,
@@ -23,10 +22,10 @@ export function MeetingDetailsScreen({
   const [isJoinMeetingClicked, setIsJoinMeetingClicked] = useState(false);
 
   return (
-    <div className={`flex flex-1 flex-col w-full `}>
+    <div className={`flex flex-1 flex-col w-full `} style={{marginTop:'15px'}}>
       {iscreateMeetingClicked ? (
         <div className=" rounded-xl bg-gray-650 px-4 py-3 flex items-center justify-center" style={{border:"2px solid black"}}>
-          <p className="text-black text-base">
+          <p className="text-black text-base" style={{marginTop:'15px'}}>
             {meetingType === meetingTypes.MEETING
               ? `Meeting code : ${meetingId}`
               : `Studio code : ${meetingId}`}
@@ -58,7 +57,8 @@ export function MeetingDetailsScreen({
             placeholder={
               meetingType === meetingTypes.MEETING ? "Enter meeting Id" : ""
             }
-            className="px-4 py-3 bg-gray-650 rounded-xl text-white w-full text-center"
+            className="px-4 py-3 bg-gray-650 rounded-xl text-black w-full text-center"
+            style={{border: "2px solid black"}}
           />
           {meetingIdError && (
             <p className="text-xs text-red-600">{`Please enter valid ${
@@ -78,6 +78,7 @@ export function MeetingDetailsScreen({
             className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-black w-full text-center"
           />
           <button
+          style={{border: '2px solid black', background: 'black', }}
             className={`w-full ${
               participantName.length < 3 ? "bg-gray-650" : "bg-purple-350"
             }  text-white px-2 py-3 rounded-xl mt-5`}
@@ -126,7 +127,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.CONFERENCE);
                     }
                   }}
-                  style={{ border: "1px solid black" }}
+                  style={{ border: "2px solid black" }}
                 >
                   Create Facetime
                 </button>
@@ -138,7 +139,7 @@ export function MeetingDetailsScreen({
                       setMeetingMode(Constants.modes.VIEWER);
                     }
                   }}
-                  style={{ border: "1px solid black" }}
+                  style={{ border: "2px solid black" }}
                 >
                   Join Facetime
                 </button>
