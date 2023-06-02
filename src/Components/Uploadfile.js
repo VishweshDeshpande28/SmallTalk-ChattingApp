@@ -26,6 +26,8 @@ const Uploadfile = () => (
 );
 export default Uploadfile;
 
+
+
 const Img = styled.img`
   position: fixed;
   right: 170px;

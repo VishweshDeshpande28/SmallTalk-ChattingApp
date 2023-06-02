@@ -121,6 +121,20 @@ p {
   }
 }
 
+.ant-upload-list-item-error{
+  margin-right: 50%;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.ant-upload-list-item-file{
+height: 60px !important;
+}
+
+.ant-upload-list-item-name{
+  margin: 0px !important;
+}
+
 
 #chat2 .form-control {
   border-color: transparent;
